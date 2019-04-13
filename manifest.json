@@ -1,0 +1,22 @@
+{
+  "name": "PWA Test",
+  "short_name": "PWA Test",
+  "icons": [
+    {
+      "src": "images/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#ff0000",
+  "orientation": "any"
+}
