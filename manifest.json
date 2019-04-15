@@ -1,14 +1,14 @@
 {
-  "name": "PWA Test",
-  "short_name": "PWA Test",
+  "name": "Fullstack Tech Radar Day 2019",
+  "short_name": "Tech Day 2019",
   "icons": [
     {
-      "src": "images/logo192.png",
+      "src": "img/timi-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "images/logo512.png",
+      "src": "img/timi-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
@@ -17,6 +17,6 @@
   "background_color": "#ffffff",
   "display": "standalone",
   "scope": "/",
-  "theme_color": "#ff0000",
+  "theme_color": "#ff6f00",
   "orientation": "any"
 }

@@ -1,0 +1,118 @@
+.middle-section {
+    position: relative;
+    width: 100%;
+    background: #f0631b url('/img/middle-bg.jpg') center top no-repeat;
+    background-size: 100%;
+}
+
+section.middle-section {
+    margin: 0;
+    padding-bottom: 0px;
+    height: unset;
+}
+
+.middle-section .info-details p {
+    font-size: 26px;
+    text-align: center;
+    padding: 0 8px;
+}
+
+.middle-section .details p {
+    margin-top: 20px;
+    line-height: 29px;
+}
+
+.middle-section div.details h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.middle-section div.info-details {
+    padding: 0;
+    padding-top: 35px;
+}
+
+.middle-section div.call-to-action {
+    padding: 50px;
+}
+
+.call-to-action-container {
+    text-align: center;
+    padding: 10px;
+}
+
+.call-to-action span {
+    font-size: 15px;
+}
+
+@media (max-width: 576px) {
+    section.middle-section {
+        margin-top: 0px;
+    }
+    .middle-section  .statistic .stat {
+        font-size: 32px;
+    }
+    .middle-section .info-details p {
+        font-size: 22px;
+        line-height: 26px;
+        text-align: center;
+        padding: 0 8px;
+    }
+    .middle-section div.details h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .middle-section .content-wrapper div.col-md-3{
+        margin-bottom: 18px;
+        padding-top: 18px;
+    }
+
+    .statistic .stat-info {
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .call-to-action span:nth-child(2) {
+        margin-top: 20px;
+    }
+    .call-to-action {
+        flex-direction: column;
+        padding: 16px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) {
+    /* Mid section */
+    .middle-section {
+        width: 100%;
+        height: 810px;
+    }
+    .middle-section .info-details p {
+        font-size: 16px;
+        line-height: 23px;
+        text-align: center;
+    }
+    .middle-section div.details h1 {
+        font-size: 50px;
+        text-align: center;
+        line-height: 50px;
+        letter-spacing: 2px;
+    }
+    .middle-section div.details {
+        margin: 0 auto;
+    }
+    .middle-section div.info-details {
+        padding: 0px;
+        padding-top: 100px;
+    }
+    .middle-section div.call-to-action {
+        justify-content: space-evenly;
+        padding: 110px 420px;
+    }
+    .call-to-action span {
+        float: right;
+        margin-left: 0px;
+    }
+}
