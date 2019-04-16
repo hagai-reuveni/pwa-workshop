@@ -1,27 +1,87 @@
-self.addEventListener('install', function(e) {
-	e.waitUntil(
-		caches.open('cacheTitle')
-			.then(function(cache) {
-			return cache.addAll([
-				'index.html',
-				'manifest.json',
-				'sw.js',
-				'images/favicon.png',
-				'images/logo512.png',
-				'images/logo192.png',
-				'fonts/glyphicons-halflings-regular.eot',
-				'fonts/glyphicons-halflings-regular.svg',
-				'fonts/glyphicons-halflings-regular.ttf',
-				'fonts/glyphicons-halflings-regular.woff',
-			]);
-		})
-	);
+self.addEventListener('install', function (e) {
+  e.waitUntil(
+    caches.open('cache')
+      .then(function (cache) {
+        return cache.addAll([
+          '/index.html',
+          'sw.js',
+          'css/main.css',
+          'css/first-section.css',
+          'css/second-section.css',
+          'css/third-section.css',
+          'css/tikal-tech-radar.css',
+          'img/radar-sample.jpg',
+          'img/BACKEND-icon.png',
+          'js/default.js',
+          'js/scripts.js',
+          'js/app.js',
+          'img/DEVOPS-icon.png',
+          'img/FRONTEND-icon.png',
+          'img/MOBILE-icon.png',
+          'img/organizers/tikal.png',
+          'img/partners/netflix.png',
+          'img/partners/WixEng.png',
+          'img/partners/sedaily.png',
+          'img/partners/Your-Logo-here.png',
+          'img/partners/alignteck.png',
+          'img/partners/fullstack.jpeg',
+          'img/partners/soluto.png',
+          'img/partners/panorays.jpeg',
+          'img/partners/invoiceninja.png',
+          'img/partners/mindspace.png',
+          'img/partners/js-israel.jpeg',
+          'img/partners/big-things-logo.png',
+          'img/sprites/sprites.svg#icon-menu',
+          'img/sprites/logo.png',
+          'img/FULLSTACK%20TECH%20RADAR%20DAY%20by%20Tikal.png',
+          'img/timi.png',
+          'img/middle-bg.jpg',
+          'img/footer/linkedin-icon.png',
+          'img/footer/twitter-icon.png',
+          'img/footer/facebook-icon.png',
+          'img/people/shlomo.jpg',
+          'img/people/hillelc.jpg',
+          'img/people/gregb.png',
+          'img/people/yoavnordmann.jpg',
+          'img/people/jeff.jpg',
+          'img/people/adilevin.png',
+          'img/people/netta.jpg',
+          'img/people/urishaked.jpg',
+          'manifest.json',
+          'img/timi-192.png',
+          'img/other/map-marker.svg',
+          'speakers/index.html',
+          'img/sections-background/middle-bg.jpg',
+          'img/people/demi-ben-ari.jpg',
+          'img/people/omerlh.png',
+          'img/people/bars.jpg',
+          'img/people/bennyn.jpg',
+          'img/people/levv.png',
+          'img/people/liork.jpg',
+          'img/people/haggaizagury.jpg',
+          'img/people/haimcohen.png',
+          'img/people/ronel.jpg',
+          'img/people/moti-bar-tov-1.jpg',
+          'img/people/chaimt.jpg',
+          'img/people/RoyPearl.jpg',
+          'img/people/royk.jpg',
+          'img/people/shavitc.jpeg',
+          'img/people/hagair.jpeg',
+          'img/people/alonv.jpg',
+          'img/people/dorkeliman.jpeg',
+          'img/favicons/favicon.ico',
+          'schedule/index.html',
+          'updates/index.html',
+          'venue/index.html',
+        ]);
+      }),
+  );
 });
 
-self.addEventListener('fetch', function(event) {
-	event.respondWith(
-		caches.match(event.request).then(function(response) {
-			return response || fetch(event.request);
-		})
-	);
+self.addEventListener('fetch', function (event) {
+  event.respondWith(
+    caches.match(event.request).then(function (response) {
+      return response || fetch(event.request);
+    }),
+  );
 });
