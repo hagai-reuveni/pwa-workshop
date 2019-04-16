@@ -891,11 +891,6 @@
     </script>
     <script type="text/javascript" src="/start/js/app.js"></script>
     <script>
-		if('serviceWorker' in navigator) {
-			navigator.serviceWorker
-				   .register('sw.js')
-				   .then(function() {console.log("Service Worker Registered");});
-		}
 		let deferredPrompt;
 		const installButton = document.querySelector('.installButton');
 		installButton.style.display = 'none';
