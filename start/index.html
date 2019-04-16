@@ -889,20 +889,3 @@
         }]
     </script>
     <script type="text/javascript" src="/end/js/app.js"></script>
-    <script>
-		let deferredPrompt;
-		const installButton = document.querySelector('.installButton');
-		installButton.style.display = 'none';
-		window.addEventListener('beforeinstallprompt', (e) => {
-			e.preventDefault();
-			deferredPrompt = e;
-			//Add 'Install PWA' button to the page if the browser supports it.
-			if(deferredPrompt != undefined){
-				installButton.style.display = 'inline';
-				installButton.addEventListener('click', (e) => {
-                    e.preventDefault();
-					deferredPrompt.prompt();
-				});
-			}
-		});
-		</script>
