@@ -6,8 +6,16 @@ const {
     parallel } = require('gulp'),
     connect = require('gulp-connect');
 
-exports.start = parallel(initDevServer, initWatching);
-exports.default = parallel(initDevServer, initWatching);
+    exports.start = parallel(initDevServer, initWatching);
+    exports.default = parallel(initDevServer, initWatching);
+    exports.build = series(
+        parallel(
+            copyImages,
+            minifyJS,
+            parseCSS,
+            copyFonts),
+        embedHTMLChanges,
+    );
 
 function initDevServer() {
     return connect.server({
