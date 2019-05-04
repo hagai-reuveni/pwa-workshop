@@ -61,7 +61,7 @@
 .radar-outer .octopus {
     position: absolute;
     margin: 25px 57px;
-    content: url('/end/img/timi.png');
+    content: url('/img/timi.png');
     width: 65%;
     height: 65%;
     -webkit-animation: elevate 2s ease-in-out forwards;
@@ -75,7 +75,7 @@
     height: 320px;
     top: 0;
     left: 0;
-    content: url('/end/img/FULLSTACK TECH RADAR DAY by Tikal.png');
+    content: url('/img/FULLSTACK TECH RADAR DAY by Tikal.png');
 }
 
 .small-radar {}
@@ -277,7 +277,7 @@
     .radar-outer .octopus {
         position: absolute;
         margin: 60px -157px;
-        content: url('/end/img/timi.png');
+        content: url('/img/timi.png');
         width: 65%;
         height: 65%;
         -webkit-animation: elevate 2s ease-in-out forwards alternate;
