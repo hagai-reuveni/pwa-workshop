@@ -16,6 +16,7 @@
     "gulp-htmlmin": "^5.0.1",
     "gulp-inject": "^5.0.2",
     "gulp-purifycss": "^0.2.0",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "surge": "^0.20.4"
   }
 }
