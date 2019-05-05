@@ -4,7 +4,10 @@
   "description": "A PWA workshop",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp start",
+    "build": "gulp build",
+    "deploy": "surge",
+    "build:deploy": "gulp build && surge"
   },
   "author": "",
   "license": "ISC",
