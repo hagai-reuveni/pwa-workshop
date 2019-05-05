@@ -13,25 +13,26 @@ const {
             copyImages,
             minifyJS,
             parseCSS,
-            copyFonts),
+            copyOther),
         embedHTMLChanges,
     );
 
 function initDevServer() {
     return connect.server({
         root: 'dist',
-        livereload: true
+        livereload: true,
+        https: true,
     });
     ;
 };
 
 function initWatching() {
-    watch('src/**/*',  { events: 'all' }, series(
+    watch(['src/**/*', 'src/**/.*'],  { events: 'all' }, series(
         parallel(
             copyImages,
             minifyJS,
             parseCSS,
-            copyFonts),
+            copyOther),
         embedHTMLChanges,
         ));
 };
@@ -87,7 +88,12 @@ function parseCSS() {
     ]))
     .pipe(dest('dist/css'));
 }
-function copyFonts(srcFolder = 'src') {
-    return src('src/fonts/*')
-    .pipe(dest('dist/fonts'));
+function copyOther() {
+    return src([
+        'src/**/*',
+        'src/**/.*',
+        '!src/**/*.js',
+        '!src/**/*.css',
+        '!src/img/**'])
+    .pipe(dest('dist'));
 }
