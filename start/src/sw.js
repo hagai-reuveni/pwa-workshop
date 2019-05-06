@@ -9,7 +9,6 @@ const cssFiles = [
 ];
 
 const scriptsFiles = [
-    '/sw.js',
     '/js/app.js',
     '/js/default.js',
     '/js/scripts.js',
