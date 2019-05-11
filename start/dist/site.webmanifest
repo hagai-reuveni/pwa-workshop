@@ -18,5 +18,6 @@
     "display": "standalone",
     "start_url": "/",
     "scope": "/",
-    "orientation": "any"
+    "orientation": "any",
+    "gcm_sender_id": "103953800507"
 }
