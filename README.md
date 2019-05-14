@@ -1,6 +1,4 @@
 # PWA workshop
-## Step 2 - Website Manifest
+## Step 1 - Https
 
-In this step we will add a website manifest and see it's influence over the website
-
-in order to do so we will use - [realfavicongenerator.net](realfavicongenerator.net)
+In this step we will deploy the website to a url provided by [surge](https://surge.sh/) and see how easily we'll have our own private (secure) url for our soon to be PWA
