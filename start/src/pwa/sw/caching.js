@@ -1,4 +1,4 @@
-importScripts('../../js/workbox.js');
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
 
 const cssFiles = [
     '/css/first-section.css',
@@ -43,12 +43,6 @@ const initCaching = () => {
         //precache
         workbox.precaching.precacheAndRoute([...cssFiles,
         ...scriptsFiles, ...htmlFiles, ...otherFiles]);
-
-        //google scripts
-        workbox.routing.registerRoute(/.*(?:googleapis|gstatic)\.com.*$/,
-            workbox.strategies.staleWhileRevalidate({
-                cacheName: 'external-google-scripts'
-            }));
 
         //images
         workbox.routing.registerRoute(
