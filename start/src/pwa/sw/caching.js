@@ -12,7 +12,6 @@ const scriptsFiles = [
     '/js/app.js',
     '/js/default.js',
     '/js/scripts.js',
-    '/js/platform.js',
     '/js/workbox.js',
     '/pwa/index.js',
     '/pwa/sw/caching.js',
