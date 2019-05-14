@@ -37,3 +37,25 @@ const htmlFiles = [
 const otherFiles = [
     '/site.webmanifest'
 ];
+
+const initCaching = () => {
+    if (workbox) {
+        //precache
+        workbox.precaching.precacheAndRoute([...cssFiles,
+        ...scriptsFiles, ...htmlFiles, ...otherFiles]);
+
+        //google scripts
+        workbox.routing.registerRoute(/.*(?:googleapis|gstatic)\.com.*$/,
+            workbox.strategies.staleWhileRevalidate({
+                cacheName: 'external-google-scripts'
+            }));
+
+        //images
+        workbox.routing.registerRoute(
+            /(.*)\.(?:png|gif|jpg|svg|ico|jpeg)/,
+            workbox.strategies.cacheFirst({ cacheName: 'images' })
+        );
+    } else {
+        console.log(`Workbox didn't load 😬`);
+    }
+}
