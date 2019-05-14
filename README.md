@@ -1,8 +1,4 @@
 # PWA workshop
-## Step 4 - Caching
+## Step 3 - Service Worker
 
-In this step we will implement our caching mechanism for that we will use Workbox and we will cache:
-
-* Local files
-* Google api's files
-* Images files
+In this step we will register a service worker to our website
