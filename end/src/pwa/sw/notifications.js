@@ -12,7 +12,7 @@ const initMessaging = () =>{
         var notificationTitle = payload.data.title;
         var notificationOptions = {
             body: payload.data.body,
-            icon: '/mstile-150x150.png',
+            icon: '/pwa/images/mstile-150x150.png',
             data:{url:payload.data.url}
         };
         
