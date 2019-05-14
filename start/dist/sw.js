@@ -1,1 +1,1 @@
-importScripts("pwa/sw/caching.js"),initCaching(),importScripts("pwa/sw/notifications.js"),initMessaging();
+importScripts("pwa/sw/caching.js"),initCaching();
