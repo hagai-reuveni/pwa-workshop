@@ -28,7 +28,7 @@ const htmlFiles = [
     '/updates/Can-Kubernetes-Keep-a-Secret.html',
     '/updates/conversational-ui.html',
     '/updates/Full-Cycle-Development-at-netflix.html',
-    '/updtes/Hacker-vs-Company-Cloud-Cyber-Security-Automated-with-Kubernetes.html',
+    '/updates/Hacker-vs-Company-Cloud-Cyber-Security-Automated-with-Kubernetes.html',
     '/updates/Interview-With-Haggai-About-Chaos-Engineering.html',
     '/updates/OnRadar-Episode-1-A-Config-Keeping-tale.html',
     '/updates/You-Are-Not-A-Commodity.html'

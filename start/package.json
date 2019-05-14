@@ -6,8 +6,7 @@
   "scripts": {
     "start": "gulp start",
     "build": "gulp build",
-    "deploy": "surge",
-    "build:deploy": "gulp build && surge"
+    "deploy": "gulp build && surge"
   },
   "author": "",
   "license": "ISC",
