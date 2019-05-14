@@ -38,22 +38,22 @@ const otherFiles = [
     '/site.webmanifest'
 ];
 
-const initCaching = () =>{
+const initCaching = () => {
     if (workbox) {
-        workbox.precaching.precacheAndRoute([...cssFiles, 
-            ...scriptsFiles, ...htmlFiles, ...otherFiles]);
-    
+        //precache
+        workbox.precaching.precacheAndRoute([...cssFiles,
+        ...scriptsFiles, ...htmlFiles, ...otherFiles]);
+
+        //google scripts
+        workbox.routing.registerRoute(/.*(?:googleapis|gstatic)\.com.*$/,
+            workbox.strategies.staleWhileRevalidate({
+                cacheName: 'external-google-scripts'
+            }));
+
+        //images
         workbox.routing.registerRoute(
             /(.*)\.(?:png|gif|jpg|svg|ico|jpeg)/,
-            workbox.strategies.cacheFirst({
-                cacheName: 'images-cache',
-                plugins: [
-                    new workbox.expiration.Plugin({
-                        maxEntries: 200,
-                        maxAgeSeconds: 7 * 24 * 60 * 60, // a week
-                    })
-                ]
-            })
+            workbox.strategies.cacheFirst({ cacheName: 'images' })
         );
     } else {
         console.log(`Workbox didn't load 😬`);
