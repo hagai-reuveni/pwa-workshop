@@ -13,7 +13,10 @@ const scriptsFiles = [
     '/js/default.js',
     '/js/scripts.js',
     '/js/platform.js',
-    '/js/workbox.js'
+    '/js/workbox.js',
+    '/pwa/index.js',
+    '/pwa/sw/caching.js',
+    '/pwa/sw/notifications.js'
 ];
 
 const htmlFiles = [
@@ -36,9 +39,9 @@ const otherFiles = [
 ];
 
 const initCaching = () =>{
-    console.log('new caching');
     if (workbox) {
-        workbox.precaching.precacheAndRoute([...cssFiles, ...scriptsFiles, ...htmlFiles, ...otherFiles]);
+        workbox.precaching.precacheAndRoute([...cssFiles, 
+            ...scriptsFiles, ...htmlFiles, ...otherFiles]);
     
         workbox.routing.registerRoute(
             /(.*)\.(?:png|gif|jpg|svg|ico|jpeg)/,

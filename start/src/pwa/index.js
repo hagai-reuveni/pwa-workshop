@@ -9,8 +9,6 @@ const firebaseConfig = {
     appId: "1:1000934113831:web:581cee95d9a6f469"
 };
 
-const FCFUrl = 'https://us-central1-pwa-workshop-63f48.cloudfunctions.net';
-
 firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
 //pull out VAPID public key from: 
@@ -33,7 +31,6 @@ const sendTokenToServer = token =>{
     const addToken = firebase.functions().httpsCallable('addToken');
     return addToken({token});
 }
-
 
 const getToken = () => {
     return messaging.getToken().then(function (currentToken) {
