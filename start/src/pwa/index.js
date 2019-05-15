@@ -10,42 +10,27 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+
 const messaging = firebase.messaging();
-//pull out VAPID public key from: 
+
+//Use this VAPID (taken from google firebase) to register tokens
 messaging.usePublicVapidKey("BJbjv60gNlm-6v5eoE-x4YUGZb94LyJsVCtC6oM9Qqk6lWWHI1CODiiPdRDxAP_EnbGAPoxEmYb5l3mmSOChJck");
 
 if ('serviceWorker' in navigator) {
     // sw.js can literally be empty, but must exist
     navigator.serviceWorker.register('sw.js')
         .then((registration) => messaging.useServiceWorker(registration))
-        .then(() => requestPermission())
-        .then(() => getToken())
-        .then(token => sendTokenToServer(token))
-        .then(res  => {
+        .then(() => requestNotificationsPermission())
+        .then(() => getTokenFromMessagingService()) //Step 1 start here
+        .then(token => sendTokenToMyServer(token))
+        .then(res => {
             console.log('Notifications setup is ready');
         })
-        .catch(err => console.log('Notifications Error',err));
+        .catch(err => console.log('Notifications Error', err));
 }
 
-const sendTokenToServer = token =>{
-    const addToken = firebase.functions().httpsCallable('addToken');
-    return addToken({token});
-}
-
-const getToken = () => {
-    return messaging.getToken().then(function (currentToken) {
-        if (currentToken) {
-            return currentToken;
-        } else {
-            console.log('No Instance ID token available. Request permission to generate one.');
-        }
-    }).catch(function (err) {
-        console.log('An error occurred while retrieving token. ', err);
-    });
-}
-
-const requestPermission = () => {
-    return messaging.requestPermission().then(function () {
+const requestNotificationsPermission = () => {
+    return messaging.requestPermission().then(() => {
         console.log('Notification permission granted.');
         return true;
     }).catch(function (err) {
@@ -53,6 +38,28 @@ const requestPermission = () => {
     });
 }
 
+const getTokenFromMessagingService = () => {
+    return messaging.getToken().then((currentToken) => {
+        if (currentToken) {
+            return currentToken;
+        } else {
+            console.log('No Instance ID token available. Request permission to generate one.');
+            return null;
+        }
+    }).catch(function (err) {
+        console.log('An error occurred while retrieving token. ', err);
+    });
+}
+
+const sendTokenToMyServer = token => {
+    if (token) {
+        const addToken = firebase.functions().httpsCallable('addToken');
+        return addToken({ token });
+    }
+    return Promise.reject('Problem sending token to backend');
+}
+
+// Will be triggered if a push is recieved but the tab is on focus
 messaging.onMessage(function (payload) {
     console.log('Message received but app on Focus', payload);
     console.log(payload);

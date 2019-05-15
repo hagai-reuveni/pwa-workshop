@@ -3,4 +3,5 @@ initCaching();
 
 importScripts('pwa/sw/notifications.js');
 initMessaging();
-console.log('service worker1');
+
+console.log('service worker');
