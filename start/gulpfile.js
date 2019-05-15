@@ -21,7 +21,7 @@ function initDevServer() {
     return connect.server({
         root: 'dist',
         livereload: true,
-        https: true,
+        https: false,
     });
     ;
 };
