@@ -1,5 +1,5 @@
 # PWA Workshop
-In this workshop we will take the [Tech Radar Day 2019 Website](https://fullstackradar.tikalk.com/) and create a PWA (Progressivbe Web App) from it.
+In this workshop we will take the [Tech Radar Day 2019 Website](https://fullstackradar.tikalk.com/) and create a PWA (Progressive Web App) from it.
 
 ## Steps
 * Step 1 https
